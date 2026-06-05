@@ -124,7 +124,7 @@ namespace ConsoleApp1.Lexer
                     break;
 
                 //// String literal
-                //case '"': ScanString(); break;
+                case '"': ScanString(); break;
 
                 // Espaços em branco: simplesmente ignoramos.
                 case ' ':
