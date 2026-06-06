@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="IR\" />
     <Folder Include="Semantic\" />
-    <Folder Include="Parser\" />
     <Folder Include="VM\" />
   </ItemGroup>
 
