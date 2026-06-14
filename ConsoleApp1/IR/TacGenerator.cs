@@ -1,3 +1,6 @@
+using ConsoleApp1.AST;
+using ConsoleApp1.Lexer;
+
 namespace ConsoleApp1.IR;
 
 // ============================================================
@@ -36,18 +39,18 @@ public class TacGenerator
         switch (stmt)
         {
             case VarDeclStmt d:
-            {
-                string value = GenExpr(d.Initializer);
-                Emit(new Tac("=", arg1: value, result: d.Name)); // x = value
-                break;
-            }
+                {
+                    string value = GenExpr(d.Initializer);
+                    Emit(new Tac("=", arg1: value, result: d.Name)); // x = value
+                    break;
+                }
 
             case AssignStmt a:
-            {
-                string value = GenExpr(a.Value);
-                Emit(new Tac("=", arg1: value, result: a.Name)); // x = value
-                break;
-            }
+                {
+                    string value = GenExpr(a.Value);
+                    Emit(new Tac("=", arg1: value, result: a.Name)); // x = value
+                    break;
+                }
 
             case PrintStmt p:
                 if (p.Value is StringLiteral s)
@@ -136,25 +139,25 @@ public class TacGenerator
         {
             // Constantes viram operandos diretos (não precisam de temp).
             case NumberLiteral n: return n.Value.ToString();
-            case BoolLiteral b:   return b.Value ? "1" : "0"; // bool é 1/0 na VM
-            case VariableExpr v:  return v.Name;
+            case BoolLiteral b: return b.Value ? "1" : "0"; // bool é 1/0 na VM
+            case VariableExpr v: return v.Name;
 
             case UnaryExpr u:
-            {
-                string operand = GenExpr(u.Operand);
-                string temp = NewTemp();
-                Emit(new Tac("-", arg1: "0", arg2: operand, result: temp)); // -x  =>  t = 0 - x
-                return temp;
-            }
+                {
+                    string operand = GenExpr(u.Operand);
+                    string temp = NewTemp();
+                    Emit(new Tac("-", arg1: "0", arg2: operand, result: temp)); // -x  =>  t = 0 - x
+                    return temp;
+                }
 
             case BinaryExpr bin:
-            {
-                string left = GenExpr(bin.Left);
-                string right = GenExpr(bin.Right);
-                string temp = NewTemp();
-                Emit(new Tac(OpSymbol(bin.Op.Type), arg1: left, arg2: right, result: temp));
-                return temp;
-            }
+                {
+                    string left = GenExpr(bin.Left);
+                    string right = GenExpr(bin.Right);
+                    string temp = NewTemp();
+                    Emit(new Tac(OpSymbol(bin.Op.Type), arg1: left, arg2: right, result: temp));
+                    return temp;
+                }
 
             default:
                 throw new Exception("Expressão inesperada na geração de TAC.");
@@ -164,14 +167,14 @@ public class TacGenerator
     // Converte o TokenType do operador para o símbolo textual usado no TAC.
     private static string OpSymbol(TokenType type) => type switch
     {
-        TokenType.Plus       => "+",
-        TokenType.Minus      => "-",
-        TokenType.Star       => "*",
-        TokenType.Slash      => "/",
+        TokenType.Plus => "+",
+        TokenType.Minus => "-",
+        TokenType.Star => "*",
+        TokenType.Slash => "/",
         TokenType.EqualEqual => "==",
-        TokenType.BangEqual  => "!=",
-        TokenType.Less       => "<",
-        TokenType.Greater    => ">",
+        TokenType.BangEqual => "!=",
+        TokenType.Less => "<",
+        TokenType.Greater => ">",
         _ => throw new Exception($"Operador inesperado: {type}")
     };
 }

@@ -1,0 +1,7 @@
+// Exemplo 2: laco while imprimindo de 1 ate 5
+int i = 1;
+
+while (i < 6) {
+    print(i);
+    i = i + 1;
+}

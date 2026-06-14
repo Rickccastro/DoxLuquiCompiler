@@ -1,4 +1,7 @@
-﻿namespace ConsoleApp1.Semantic;
+﻿using ConsoleApp1.AST;
+using ConsoleApp1.Lexer;
+
+namespace ConsoleApp1.Semantic;
 
 // ============================================================
 // ANÁLISE SEMÂNTICA

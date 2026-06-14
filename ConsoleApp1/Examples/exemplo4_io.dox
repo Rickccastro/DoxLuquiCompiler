@@ -1,0 +1,12 @@
+// Exemplo 4: entrada (read) e saida (print)
+// Le dois numeros do teclado e mostra a soma.
+int a = 0;
+int b = 0;
+
+print("Digite dois numeros:");
+read(a);
+read(b);
+
+int total = a + b;
+print("A soma e:");
+print(total);

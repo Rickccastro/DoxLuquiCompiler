@@ -42,13 +42,13 @@ public class Tac
     //   "read"     ->  read Result                           (lê para a variável)
     public override string ToString() => Op switch
     {
-        "label"     => $"{Result}:",
-        "goto"      => $"    goto {Result}",
-        "if_false"  => $"    if_false {Arg1} goto {Result}",
-        "print"     => $"    print {Arg1}",
+        "label" => $"{Result}:",
+        "goto" => $"    goto {Result}",
+        "if_false" => $"    if_false {Arg1} goto {Result}",
+        "print" => $"    print {Arg1}",
         "print_str" => $"    print \"{Arg1}\"",
-        "read"      => $"    read {Result}",
-        "="         => $"    {Result} = {Arg1}",
-        _           => $"    {Result} = {Arg1} {Op} {Arg2}", // operação binária
+        "read" => $"    read {Result}",
+        "=" => $"    {Result} = {Arg1}",
+        _ => $"    {Result} = {Arg1} {Op} {Arg2}", // operação binária
     };
 }

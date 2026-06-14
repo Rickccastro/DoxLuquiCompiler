@@ -1,0 +1,5 @@
+// ERRO SEMANTICO (type checking): nao da para somar int com bool
+int x = 10;
+bool b = true;
+int y = x + b;
+print(y);

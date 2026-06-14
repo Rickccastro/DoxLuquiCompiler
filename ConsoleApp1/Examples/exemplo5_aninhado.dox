@@ -1,0 +1,15 @@
+// Exemplo 5: if dentro de while, menos unario e escopo de bloco
+int n = 6;
+int i = 1;
+
+while (i < n + 1) {
+    // 'resto' so existe dentro deste bloco (escopo do while)
+    int resto = i - (i / 2) * 2;   // resto da divisao de i por 2
+    if (resto == 0) {
+        print(i);                  // imprime apenas os numeros pares
+    }
+    i = i + 1;
+}
+
+int neg = -n;                      // menos unario: neg = -6
+print(neg);

@@ -1,3 +1,5 @@
+using ConsoleApp1.IR;
+
 namespace ConsoleApp1.VM;
 
 // ============================================================

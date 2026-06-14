@@ -1,0 +1,9 @@
+// Exemplo 1: declaracao de variaveis, if/else e print
+int x = 10;
+int y = 20;
+
+if (x < y) {
+    print(x);
+} else {
+    print(y);
+}

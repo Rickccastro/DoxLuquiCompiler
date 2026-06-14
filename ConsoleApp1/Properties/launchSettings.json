@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Doxluqi": {
+      "commandName": "Project",
+      "commandLineArgs": "Examples/exemplo1_basico.dox --debug",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

@@ -1,48 +1,47 @@
-﻿namespace ConsoleApp1.Lexer
+﻿namespace ConsoleApp1.Lexer;
+
+// Todos os "tipos" de token que a nossa linguagem reconhece.
+// Pense em cada valor como uma "categoria" de pedaço de código.
+public enum TokenType
 {
-    public enum TokenType
-    {
-        // Palavras reservadas
-        Int,
-        Bool,
-        If,
-        Else,
-        While,
-        Print,
-        Read,
-        True,
-        False,
+    // ----- Literais (valores escritos diretamente no código) -----
+    Number,      // 10, 42, 0
+    String,      // "texto"  (só usado dentro de print)
+    Identifier,  // nomes de variáveis: x, contador, soma
 
-        // Identificadores e literais
-        Identifier, // nomes de variáveis: x, contador, soma
-        Number,    // 10, 42, 0
-        String,   // "texto"  (só usado dentro de print)
+    // ----- Palavras reservadas (keywords) -----
+    Int,    // int
+    Bool,   // bool
+    True,   // true
+    False,  // false
+    If,     // if
+    Else,   // else
+    While,  // while
+    Print,  // print
+    Read,   // read
 
-        // Operadores aritméticos
-        Plus,     // +
-        Minus,   // -
-        Star,   // *
-        Slash, // /     
+    // ----- Operadores aritméticos -----
+    Plus,   // +
+    Minus,  // -
+    Star,   // *
+    Slash,  // /
 
-        // Operadores relacionais
-        Equal, // ==
-        NotEqual, // !=
-        Less,  // <
-        Greater, // >
+    // ----- Operadores relacionais -----
+    EqualEqual,  // ==
+    BangEqual,   // !=
+    Less,        // <
+    Greater,     // >
 
-        //  Atribuição
-        Assign,                              // =
+    // ----- Atribuição -----
+    Assign,  // =
 
-        // Pontuação
-        LParen, // (
-        RParen, // )
-        LBrace, // {
-        RBrace, // }
-        Semicolon,  // ;
-        Bang,                    // !
+    // ----- Pontuação -----
+    LParen,     // (
+    RParen,     // )
+    LBrace,     // {
+    RBrace,     // }
+    Semicolon,  // ;
 
-        // Especial
-        EOF, // fim do arquivo
-
-    }
+    // ----- Marcador de fim de arquivo -----
+    EOF
 }

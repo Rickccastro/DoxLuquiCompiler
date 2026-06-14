@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleApp1.Shared
+﻿namespace ConsoleApp1
 {
     public abstract class CompilerException : Exception
     {

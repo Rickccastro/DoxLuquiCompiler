@@ -1,0 +1,5 @@
+// ERRO SEMANTICO: a condicao do if precisa ser bool, mas 'x' e int
+int x = 10;
+if (x) {
+    print(x);
+}
