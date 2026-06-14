@@ -1,4 +1,4 @@
-﻿namespace Doxluqi;
+﻿namespace ConsoleApp1.Semantic;
 
 // Os tipos que a análise semântica conhece.
 // Int e Bool são os tipos "de verdade" da linguagem.

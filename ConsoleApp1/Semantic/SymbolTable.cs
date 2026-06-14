@@ -1,4 +1,4 @@
-﻿namespace Doxluqi;
+﻿namespace ConsoleApp1.Semantic;
 
 // ============================================================
 // TABELA DE SÍMBOLOS
